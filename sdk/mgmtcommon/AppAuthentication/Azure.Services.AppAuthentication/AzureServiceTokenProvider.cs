@@ -71,7 +71,7 @@ namespace Microsoft.Azure.Services.AppAuthentication
         /// <param name="connectionString">Connection string to specify which option to use to get the token.</param>
         /// <param name="azureAdInstance">Specify a value for clouds other than the Public Cloud.</param>
         /// <param name="httpClientFactory">Passed to ADAL to allow proxied connections. Takes precedence over the static <see cref="HttpClientFactory"/> property</param>
-        public AzureServiceTokenProvider(string connectionString = default, string azureAdInstance = "https://login.microsoftonline.com/", IHttpClientFactory httpClientFactory = default)
+        public AzureServiceTokenProvider(string connectionString = default, string azureAdInstance = "https://login.microsoftonline.com/", IHttpClientFactory httpClientFactory = default, bool enableVisualStudioAccessTokenProvider = false)
         {
             if (string.IsNullOrEmpty(azureAdInstance))
             {
@@ -104,12 +104,16 @@ namespace Microsoft.Azure.Services.AppAuthentication
                 _potentialAccessTokenProviders = new List<NonInteractiveAzureServiceTokenProviderBase>
                 {
                     new MsiAccessTokenProvider(),
-                    new VisualStudioAccessTokenProvider(new ProcessManager()),
                     new AzureCliAccessTokenProvider(new ProcessManager()),
 #if FullNetFx
                     new WindowsAuthenticationAzureServiceTokenProvider(new AdalAuthenticationContext(factory), azureAdInstance)
 #endif
                 };
+
+                if (enableVisualStudioAccessTokenProvider)
+                {
+                    _potentialAccessTokenProviders.Add(new VisualStudioAccessTokenProvider(new ProcessManager()));
+                }
             }
 
         }
