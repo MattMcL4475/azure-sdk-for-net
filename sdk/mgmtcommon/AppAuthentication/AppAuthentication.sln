@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.Services.AppAuthentication", "Azure.Services.AppAuthentication\Microsoft.Azure.Services.AppAuthentication.csproj", "{3BD77688-A6A8-464C-A5E2-EDE51128E826}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.Services.AppAuthentication.IntegrationTests", "Azure.Services.AppAuthentication.IntegrationTests\Microsoft.Azure.Services.AppAuthentication.IntegrationTests.csproj", "{4AC53FD5-836F-4C47-B836-5F3C2F6236E2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.Services.AppAuthentication.TestCommon", "Azure.Services.AppAuthentication.TestCommon\Microsoft.Azure.Services.AppAuthentication.TestCommon.csproj", "{DF0FCF70-7A4B-4FE4-BFA5-FAFED4E8C24A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppAuth-hang-win", "AppAuth-hang-win\AppAuth-hang-win.csproj", "{BC6C8FDB-1BE0-43D7-84BD-E664687C5BFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{DF0FCF70-7A4B-4FE4-BFA5-FAFED4E8C24A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF0FCF70-7A4B-4FE4-BFA5-FAFED4E8C24A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF0FCF70-7A4B-4FE4-BFA5-FAFED4E8C24A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC6C8FDB-1BE0-43D7-84BD-E664687C5BFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC6C8FDB-1BE0-43D7-84BD-E664687C5BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC6C8FDB-1BE0-43D7-84BD-E664687C5BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC6C8FDB-1BE0-43D7-84BD-E664687C5BFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
